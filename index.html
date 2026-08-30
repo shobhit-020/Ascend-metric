@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ascend Metric — SEO that compounds</title>
@@ -1447,12 +1448,13 @@
     const msg = document.getElementById('profileMsg');
     msg.className = 'auth-msg';
     try{
-      const res = await fetch(`${API_BASE}/api/profile/me`, {
-        method:'PUT', headers:{'Content-Type':'application/json', Authorization:`Bearer ${token}`},
-        body: JSON.stringify({
-          name: document.getElementById('dashName').value,
-          phone: document.getElementById('dashPhone').value,
-          website: document.getElementById('dashWebsite').value,
+      const SUPABASE_URL = "https://azvylhtslopbaescsjmv.supabase.co";
+const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
+
+const supabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
         })
       });
       const data = await res.json();
