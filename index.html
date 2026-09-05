@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
 <title>Ascend Metric — SEO that compounds</title>
 <meta name="description" content="Ascend Metric is an SEO agency that turns search into your most predictable growth channel.">
 <link rel="canonical" href="https://www.ascendmetric.com/">
@@ -106,7 +107,24 @@
   .btn:active{transform:scale(.97);}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);}
   .btn.ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);}
-  .burger{display:none;}
+  .burger{
+    display:none;flex-direction:column;justify-content:center;gap:5px;
+    width:40px;height:40px;background:none;border:none;cursor:pointer;padding:8px;
+  }
+  .burger span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s;}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    display:none;flex-direction:column;
+    background:var(--white);border-top:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  .mobile-menu.open{max-height:520px;}
+  .mobile-menu a{
+    padding:16px 32px;font-size:15px;color:var(--ink);border-bottom:1px solid var(--line);
+    min-height:44px;display:flex;align-items:center;
+  }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -317,15 +335,16 @@
     letter-spacing:.06em;color:var(--ink-soft);margin-bottom:16px;
   }
   .foot-col a{
-    display:block;font-size:14.5px;margin-bottom:11px;color:var(--ink);
-    transition:color .2s;
+    display:block;font-size:14.5px;color:var(--ink);
+    transition:color .2s;padding:8px 0;
   }
   .foot-col a:hover{color:var(--signal);}
   .foot-bottom{
     display:flex;justify-content:space-between;align-items:center;
     padding-top:26px;font-size:13px;color:var(--ink-soft);
   }
-  .foot-bottom .socials{display:flex;gap:20px;}
+  .foot-bottom .socials{display:flex;gap:12px;}
+  .foot-bottom .socials a{padding:8px;}
 
   /* ---------- Pricing ---------- */
   .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -512,6 +531,9 @@
   }
   @media (max-width:920px){
     .navlinks{display:none;}
+    .burger{display:flex;}
+    .mobile-menu{display:flex;}
+    #navAuthLink{display:none;}
     .hero-grid{grid-template-columns:1fr;}
     .service-grid{grid-template-columns:1fr;}
     .stat-grid{grid-template-columns:repeat(2,1fr);}
@@ -555,8 +577,23 @@
     <div class="navcta">
       <a href="#" onclick="openAuth('login');return false;" id="navAuthLink" style="font-size:14px;color:var(--ink-soft);">Log in</a>
       <a href="mailto:ascendmetric78@gmail.com?subject=Free%20SEO%20Audit%20Request" class="btn">Get an audit</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+
+  <!-- Mobile menu panel -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#about">About</a>
+    <a href="#blog">Blog</a>
+    <a href="#faq">FAQ</a>
+    <a href="#" onclick="openAuth('login');closeMobileMenu();return false;" id="mobileAuthLink">Log in</a>
+  </nav>
 </header>
 
 <!-- Independent safety-net script (separate from the main script below).
@@ -1248,11 +1285,37 @@
   (function initAuthState(){
     const token = localStorage.getItem('am_token');
     const navLink = document.getElementById('navAuthLink');
-    if(token && navLink){
-      navLink.textContent = 'Dashboard';
-      navLink.setAttribute('onclick','openDash();return false;');
+    const mobileLink = document.getElementById('mobileAuthLink');
+    if(token){
+      if(navLink){
+        navLink.textContent = 'Dashboard';
+        navLink.setAttribute('onclick','openDash();return false;');
+      }
+      if(mobileLink){
+        mobileLink.textContent = 'Dashboard';
+        mobileLink.setAttribute('onclick','openDash();closeMobileMenu();return false;');
+      }
     }
   })();
+
+  // ---- MOBILE MENU ----
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burgerBtn.classList.toggle('open', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  function closeMobileMenu(){
+    mobileMenu.classList.remove('open');
+    burgerBtn.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded','false');
+  }
+  // Close the mobile menu automatically when a section link is tapped
+  mobileMenu.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', closeMobileMenu);
+  });
+
 
   // ---- LOGIN ----
   document.getElementById('loginForm').addEventListener('submit', async (e)=>{
@@ -1379,6 +1442,11 @@
     const navLink = document.getElementById('navAuthLink');
     navLink.textContent = 'Log in';
     navLink.setAttribute('onclick',"openAuth('login');return false;");
+    const mobileLink = document.getElementById('mobileAuthLink');
+    if(mobileLink){
+      mobileLink.textContent = 'Log in';
+      mobileLink.setAttribute('onclick',"openAuth('login');closeMobileMenu();return false;");
+    }
   }
 
   async function loadProfile(){
