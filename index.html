@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ascend Metric — SEO that compounds</title>
@@ -22,9 +21,10 @@
 }
 </script>
 <meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
+
 <!-- Fonts load async (non-render-blocking) — only weights actually used are requested -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -32,14 +32,14 @@
 <style>
   :root{
     --white:#ffffff;
-    --paper:#f4f5f6;
-    --line:#e2e4e7;
-    --ink:#14181c;
-    --ink-soft:#565d66;
-    --signal:#0e6b52;
-    --signal-dim:#e6efec;
-    --spark:#ff5a36;
-    --radius:2px;
+    --paper:#f6f7f9;
+    --line:#e1e4ea;
+    --ink:#0d1526;
+    --ink-soft:#59616f;
+    --signal:#1d4fd6;
+    --signal-dim:#e9eefc;
+    --navy-deep:#0b1d3a;
+    --radius:3px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -56,13 +56,13 @@
   .mono{font-family:'IBM Plex Mono',monospace;}
   .serif{font-family:'Instrument Serif',serif;}
   ::selection{background:var(--signal);color:var(--white);}
- 
+
   :focus-visible{outline:2px solid var(--signal);outline-offset:3px;}
- 
+
   /* ---------- Utility reveal ---------- */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
- 
+
   /* ---------- Header ---------- */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
@@ -107,7 +107,7 @@
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);}
   .btn.ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);}
   .burger{display:none;}
- 
+
   /* ---------- Hero ---------- */
   .hero{
     padding:168px 0 90px;
@@ -121,8 +121,8 @@
   }
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    font-family:'Inter',sans-serif;font-weight:600;
+    font-size:14px;
     color:var(--signal);
     margin-bottom:22px;
   }
@@ -138,7 +138,7 @@
     letter-spacing:-.01em;
     max-width:780px;
   }
-  .hero h1 em{font-style:italic;color:var(--signal);}
+  .hero h1 em{font-style:normal;}
   .hero p.lede{
     margin-top:26px;
     font-size:18px;line-height:1.6;color:var(--ink-soft);
@@ -146,7 +146,7 @@
   }
   .hero-actions{display:flex;gap:16px;margin-top:38px;align-items:center;}
   .hero-actions .note{font-size:13px;color:var(--ink-soft);}
- 
+
   .chart-card{
     background:var(--paper);
     border:1px solid var(--line);
@@ -180,7 +180,7 @@
   @keyframes draw{to{stroke-dashoffset:0;}}
   @keyframes fadeArea{to{opacity:1;}}
   .chart-foot{display:flex;justify-content:space-between;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);}
- 
+
   /* ---------- Marquee / trust strip ---------- */
   .trust{
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -193,7 +193,7 @@
     letter-spacing:.02em;
   }
   @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
- 
+
   /* ---------- Section shared ---------- */
   section{padding:120px 0;}
   .section-head{
@@ -206,10 +206,10 @@
   }
   .section-head p{color:var(--ink-soft);font-size:15.5px;max-width:340px;line-height:1.6;}
   .eyebrow-sm{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--signal);margin-bottom:14px;display:block;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+    color:var(--signal);margin-bottom:14px;display:block;
   }
- 
+
   /* ---------- Services ---------- */
   .services{background:var(--paper);}
   .service-grid{
@@ -226,7 +226,7 @@
   }
   .service-card h3{font-size:19px;font-weight:600;margin-bottom:12px;letter-spacing:-.01em;}
   .service-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.65;}
- 
+
   /* ---------- Process (real sequence, numbered) ---------- */
   .process-list{border-top:1px solid var(--line);}
   .process-row{
@@ -240,24 +240,24 @@
   }
   .process-row h3{font-size:20px;font-weight:600;letter-spacing:-.01em;padding-top:4px;}
   .process-row .stage-mono{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--signal);
-    text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:8px;
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--signal);
+    display:block;margin-bottom:8px;
   }
   .process-row p{color:var(--ink-soft);font-size:14.5px;line-height:1.7;padding-top:4px;}
- 
+
   /* ---------- Results / stats ---------- */
   .results{background:var(--ink);color:var(--white);}
   .results .section-head{border-bottom-color:#2a2f35;}
   .results .section-head p{color:#9aa2ab;}
-  .results .eyebrow-sm{color:#4fd6ac;}
+  .results .eyebrow-sm{color:#6fa3ff;}
   .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#2a2f35;border:1px solid #2a2f35;}
   .stat{background:var(--ink);padding:34px 26px;}
   .stat .num{
-    font-family:'Instrument Serif',serif;font-size:52px;line-height:1;color:#4fd6ac;
+    font-family:'Instrument Serif',serif;font-size:52px;line-height:1;color:#6fa3ff;
   }
   .stat .num sup{font-size:22px;top:-.6em;}
   .stat .lbl{font-size:13.5px;color:#9aa2ab;margin-top:12px;line-height:1.5;}
- 
+
   /* ---------- Case snapshot ---------- */
   .cases{}
   .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
@@ -268,15 +268,15 @@
   }
   .case-card:hover{box-shadow:0 14px 30px -18px rgba(20,24,28,.25);transform:translateY(-3px);}
   .case-card .sector{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
-    letter-spacing:.06em;color:var(--ink-soft);
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+    color:var(--ink-soft);
   }
   .case-card h3{font-size:20px;font-weight:600;letter-spacing:-.01em;}
   .case-card .metric-row{display:flex;gap:22px;border-top:1px solid var(--line);padding-top:16px;}
   .case-card .metric-row div span{display:block;}
   .case-card .metric-row .v{font-family:'Instrument Serif',serif;font-size:26px;color:var(--signal);}
   .case-card .metric-row .k{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
- 
+
   /* ---------- Testimonial ---------- */
   .testi{background:var(--paper);}
   .testi-inner{max-width:760px;margin:0 auto;text-align:center;}
@@ -286,7 +286,7 @@
   }
   .testi .who{margin-top:28px;font-size:14px;color:var(--ink-soft);}
   .testi .who b{color:var(--ink);}
- 
+
   /* ---------- CTA ---------- */
   .cta{
     background:var(--ink);color:var(--white);
@@ -300,10 +300,10 @@
     background:radial-gradient(circle,rgba(79,214,172,.18),transparent 70%);
   }
   .cta h2{font-family:'Instrument Serif',serif;font-size:clamp(28px,3.6vw,44px);max-width:480px;font-weight:400;}
-  .cta .btn{background:#4fd6ac;color:var(--ink);border-color:#4fd6ac;}
+  .cta .btn{background:#6fa3ff;color:var(--ink);border-color:#6fa3ff;}
   .cta .btn:hover{background:var(--white);border-color:var(--white);}
   .cta-side{flex-shrink:0;}
- 
+
   /* ---------- Footer ---------- */
   footer{padding:70px 0 34px;}
   .foot-top{
@@ -326,7 +326,7 @@
     padding-top:26px;font-size:13px;color:var(--ink-soft);
   }
   .foot-bottom .socials{display:flex;gap:20px;}
- 
+
   /* ---------- Pricing ---------- */
   .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .price-card{
@@ -338,7 +338,7 @@
   .price-card.featured{border-color:var(--signal);background:var(--signal-dim);}
   .price-card .tag{
     position:absolute;top:-13px;right:24px;background:var(--signal);color:var(--white);
-    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
     padding:5px 12px;border-radius:20px;
   }
   .price-card h3{font-size:20px;font-weight:600;letter-spacing:-.01em;}
@@ -352,7 +352,7 @@
     content:'✓';position:absolute;left:0;color:var(--signal);font-weight:700;
   }
   .price-card .btn{justify-content:center;}
- 
+
   /* ---------- Team / About ---------- */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
   .about-copy p{color:var(--ink-soft);font-size:15.5px;line-height:1.75;margin-bottom:18px;max-width:480px;}
@@ -368,8 +368,8 @@
     font-family:'Instrument Serif',serif;font-size:20px;margin-bottom:14px;
   }
   .team-card h4{font-size:16px;font-weight:600;}
-  .team-card .role{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--signal);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
- 
+  .team-card .role{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--signal);margin-top:2px;}
+
   /* ---------- FAQ ---------- */
   .faq-list{max-width:820px;}
   .faq-item{border-bottom:1px solid var(--line);}
@@ -396,7 +396,7 @@
     max-height:0;overflow:hidden;transition:max-height .35s ease;
   }
   .faq-a p{padding:0 0 26px;color:var(--ink-soft);font-size:14.5px;line-height:1.7;max-width:680px;}
- 
+
   /* ---------- Blog ---------- */
   .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
   .blog-card{border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;}
@@ -407,11 +407,11 @@
   }
   .blog-thumb svg{width:38px;height:38px;opacity:.55;}
   .blog-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;}
-  .blog-cat{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--signal);}
+  .blog-cat{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--signal);}
   .blog-body h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.35;}
   .blog-body p{font-size:14px;color:var(--ink-soft);line-height:1.6;}
   .blog-meta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);margin-top:auto;padding-top:8px;}
- 
+
   /* ---------- Newsletter ---------- */
   .newsletter{
     border:1px solid var(--line);border-radius:8px;padding:40px 44px;
@@ -425,7 +425,7 @@
     font-family:'Inter',sans-serif;font-size:14px;width:240px;background:var(--white);
   }
   .newsletter input:focus{outline:none;border-color:var(--signal);}
- 
+
   /* ---------- WhatsApp floating button ---------- */
   .wa-float{
     position:fixed;bottom:26px;right:26px;z-index:200;
@@ -436,50 +436,20 @@
   }
   .wa-float:hover{transform:scale(1.08);}
   .wa-float svg{width:28px;height:28px;}
- 
-  /* ---------- Hero illustration (browser/dashboard mockup) ---------- */
-  .hero-visual{display:flex;flex-direction:column;gap:18px;}
-  .browser-mock{
-    background:var(--white);border:1px solid var(--line);border-radius:10px;
-    box-shadow:0 30px 60px -30px rgba(20,24,28,.22);overflow:hidden;
+
+  /* ---------- Hero proof panel ---------- */
+  .hero-visual{display:flex;flex-direction:column;}
+  .proof-footnote{
+    font-size:12.5px;color:var(--ink-soft);margin-top:14px;padding-top:14px;
+    border-top:1px solid var(--line);
   }
-  .browser-bar{
-    display:flex;align-items:center;gap:6px;padding:10px 14px;
-    background:var(--paper);border-bottom:1px solid var(--line);
+  .proof-stats{display:flex;gap:28px;margin-top:16px;}
+  .proof-stats > div{flex:1;}
+  .proof-stats .v{
+    display:block;font-family:'Instrument Serif',serif;font-size:26px;color:var(--ink);line-height:1;
   }
-  .browser-bar span{width:9px;height:9px;border-radius:50%;background:#d7dadd;}
-  .browser-bar .url{
-    margin-left:10px;background:var(--white);border:1px solid var(--line);border-radius:20px;
-    padding:4px 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);
-  }
-  .browser-body{padding:20px 20px 22px;}
-  .serp-item{padding:12px 0;border-bottom:1px solid var(--line);}
-  .serp-item:last-child{border-bottom:none;}
-  .serp-item .site{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);margin-bottom:3px;}
-  .serp-item .title{color:#1a0dab;font-size:14.5px;margin-bottom:3px;}
-  .serp-item.rank1 .title{font-weight:700;color:var(--signal);}
-  .serp-item .rank-badge{
-    display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;
-    font-size:10px;background:var(--signal-dim);color:var(--signal);padding:2px 8px;border-radius:12px;margin-left:8px;
-  }
-  .serp-item .desc{font-size:12.5px;color:var(--ink-soft);}
-  .hero-visual .floaty{
-    position:relative;display:flex;gap:14px;
-  }
-  .float-chip{
-    background:var(--white);border:1px solid var(--line);border-radius:8px;
-    padding:12px 16px;display:flex;align-items:center;gap:10px;
-    box-shadow:0 16px 30px -20px rgba(20,24,28,.2);
-    flex:1;
-  }
-  .float-chip .ico{
-    width:30px;height:30px;border-radius:6px;background:var(--signal-dim);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-  .float-chip .ico svg{width:16px;height:16px;}
-  .float-chip .num{font-family:'Instrument Serif',serif;font-size:20px;line-height:1;}
-  .float-chip .lbl{font-size:10.5px;color:var(--ink-soft);margin-top:2px;}
- 
+  .proof-stats .k{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.4;}
+
   /* ---------- Auth Modal ---------- */
   .modal-overlay{
     position:fixed;inset:0;background:rgba(20,24,28,.55);
@@ -513,7 +483,7 @@
   .auth-msg{margin-top:12px;font-size:13px;padding:9px 11px;border-radius:4px;display:none;}
   .auth-msg.error{background:#fdecea;color:#b3261e;display:block;}
   .auth-msg.success{background:var(--signal-dim);color:var(--signal);display:block;}
- 
+
   /* ---------- Dashboard Overlay ---------- */
   .dash-overlay{
     position:fixed;inset:0;background:var(--paper);z-index:400;overflow-y:auto;display:none;
@@ -535,8 +505,8 @@
   .payments-list{margin-top:10px;font-size:13.5px;color:var(--ink-soft);}
   .payments-list div{padding:8px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;}
   @media(max-width:720px){.dash-grid{grid-template-columns:1fr;}}
- 
- 
+
+
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001s !important;transition-duration:.001s !important;}
   }
@@ -559,13 +529,12 @@
     .newsletter form{width:100%;}
     .newsletter input{width:100%;}
     .wa-float{bottom:18px;right:18px;width:52px;height:52px;}
-    .floaty{flex-direction:column;}
     .modal-card{padding:32px 24px;}
   }
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="wrap nav">
     <a href="#top" class="logo">
@@ -589,62 +558,37 @@
     </div>
   </div>
 </header>
- 
+
+<!-- Independent safety-net script (separate from the main script below).
+     Even if the main script ever has a bug, this one still runs on its own
+     and guarantees the page never looks "blank" from stuck reveal animations. -->
+<script>
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ el.classList.add('in'); });
+  }, 2500);
+</script>
+
+
 <main id="top">
- 
+
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow">SEO / Growth Partners</span>
-        <h1>Search traffic that <em>compounds</em>, not just spikes.</h1>
+        <h1>Organic growth that compounds, engineered to last.</h1>
         <p class="lede">Ascend Metric builds organic growth systems for brands who are done gambling on algorithm updates — technical SEO, content architecture, and authority, engineered to stack month over month.</p>
         <div class="hero-actions">
           <a href="mailto:ascendmetric78@gmail.com?subject=Free%20SEO%20Audit%20Request" class="btn">Request a free audit</a>
-          <a href="#cases" class="btn ghost">See the results →</a>
+          <a href="#cases" class="btn ghost">See the results</a>
         </div>
       </div>
- 
+
       <div class="hero-visual">
-        <div class="browser-mock reveal">
-          <div class="browser-bar">
-            <span></span><span></span><span></span>
-            <span class="url">google.com/search?q=best+running+shoes</span>
-          </div>
-          <div class="browser-body">
-            <div class="serp-item">
-              <div class="site">competitor-site.com</div>
-              <div class="title">Running Shoes Online | Free Shipping</div>
-              <div class="desc">Generic listing, page 2 ranking.</div>
-            </div>
-            <div class="serp-item rank1">
-              <div class="site">yourbrand.com <span class="rank-badge">▲ #1</span></div>
-              <div class="title">Best Running Shoes 2026 — Complete Buyer's Guide</div>
-              <div class="desc">Ranked #1 after technical + content overhaul by Ascend Metric.</div>
-            </div>
-            <div class="serp-item">
-              <div class="site">another-store.com</div>
-              <div class="title">Shop Running Shoes</div>
-              <div class="desc">Still stuck below the fold.</div>
-            </div>
-          </div>
-        </div>
- 
-        <div class="floaty reveal">
-          <div class="float-chip">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17L9 11L13 15L21 6" stroke="#0e6b52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><div class="num">4.2x</div><div class="lbl">Avg. ROI</div></div>
-          </div>
-          <div class="float-chip">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0e6b52" stroke-width="2.2"/><path d="M12 7v5l3.5 2" stroke="#0e6b52" stroke-width="2.2" stroke-linecap="round"/></svg></div>
-            <div><div class="num">9mo</div><div class="lbl">To page one</div></div>
-          </div>
-        </div>
- 
         <div class="chart-card reveal">
           <div class="top">
             <div>
-              <div class="label">Organic sessions / 6mo</div>
+              <div class="label">Organic sessions, trailing 6 months</div>
               <div class="value">128,400</div>
             </div>
             <div class="delta">▲ 214%</div>
@@ -652,8 +596,8 @@
           <svg class="chart-svg" viewBox="0 0 400 150" preserveAspectRatio="none">
             <defs>
               <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0e6b52" stop-opacity="0.22"/>
-                <stop offset="100%" stop-color="#0e6b52" stop-opacity="0"/>
+                <stop offset="0%" stop-color="#1d4fd6" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#1d4fd6" stop-opacity="0"/>
               </linearGradient>
             </defs>
             <g class="grid">
@@ -668,11 +612,16 @@
           <div class="chart-foot">
             <span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
           </div>
+          <div class="proof-footnote">Aggregated across active client accounts, updated monthly.</div>
+          <div class="proof-stats">
+            <div><span class="v">4.2x</span><span class="k">Average return on SEO spend</span></div>
+            <div><span class="v">9 months</span><span class="k">Median time to page one</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- TRUST MARQUEE -->
   <div class="trust">
     <div class="trust-inner" id="trustTrack">
@@ -692,7 +641,7 @@
       <span>GREYFIELD REALTY</span>
     </div>
   </div>
- 
+
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="wrap">
@@ -719,7 +668,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- PROCESS -->
   <section id="process">
     <div class="wrap">
@@ -751,7 +700,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- RESULTS -->
   <section class="results" id="results">
     <div class="wrap">
@@ -779,7 +728,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- CASE STUDIES -->
   <section class="cases" id="cases">
     <div class="wrap">
@@ -815,7 +764,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- TESTIMONIAL -->
   <!-- PRICING -->
   <section id="pricing">
@@ -863,7 +812,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ABOUT / TEAM -->
   <section id="about" style="background:var(--paper);">
     <div class="wrap about-grid">
@@ -899,7 +848,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- BLOG -->
   <section id="blog">
     <div class="wrap">
@@ -909,7 +858,7 @@
       </div>
       <div class="blog-grid reveal">
         <div class="blog-card">
-          <div class="blog-thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17L9 11L13 15L21 6" stroke="#0e6b52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="blog-thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17L9 11L13 15L21 6" stroke="#1d4fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="blog-body">
             <span class="blog-cat">Technical SEO</span>
             <h3>Core Web Vitals: what actually moves rankings in 2026</h3>
@@ -918,7 +867,7 @@
           </div>
         </div>
         <div class="blog-card">
-          <div class="blog-thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19h16M4 15l4-6 4 3 4-8 4 5" stroke="#0e6b52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="blog-thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19h16M4 15l4-6 4 3 4-8 4 5" stroke="#1d4fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="blog-body">
             <span class="blog-cat">Content Strategy</span>
             <h3>Topical clusters vs. keyword lists: a real comparison</h3>
@@ -927,7 +876,7 @@
           </div>
         </div>
         <div class="blog-card">
-          <div class="blog-thumb"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#0e6b52" stroke-width="2"/><path d="M12 8v4l3 2" stroke="#0e6b52" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="blog-thumb"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1d4fd6" stroke-width="2"/><path d="M12 8v4l3 2" stroke="#1d4fd6" stroke-width="2" stroke-linecap="round"/></svg></div>
           <div class="blog-body">
             <span class="blog-cat">Digital PR</span>
             <h3>How to earn links without buying them</h3>
@@ -938,7 +887,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- FAQ -->
   <section id="faq" style="background:var(--paper);">
     <div class="wrap">
@@ -970,8 +919,8 @@
       </div>
     </div>
   </section>
- 
- 
+
+
   <!-- TESTIMONIAL -->
   <section class="testi">
     <div class="wrap testi-inner reveal">
@@ -979,7 +928,7 @@
       <div class="who"><b>Shobhit Verma</b> — CEO, Ascend Metric</div>
     </div>
   </section>
- 
+
   <!-- CTA -->
   <!-- NEWSLETTER -->
   <section style="padding-bottom:0;">
@@ -996,7 +945,7 @@
       </div>
     </div>
   </section>
- 
+
   <section id="contact" style="padding-top:0;">
     <div class="cta reveal">
       <h2>Ready to see what your search traffic is actually worth?</h2>
@@ -1005,9 +954,9 @@
       </div>
     </div>
   </section>
- 
+
 </main>
- 
+
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -1050,11 +999,11 @@
     </div>
   </div>
 </footer>
- 
+
 <a href="https://wa.me/918439631617" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.13-4.9-4.32-.14-.19-1.17-1.56-1.17-2.98 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35s.38 0 .55.01c.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.16-.3.36-.43.48-.14.13-.29.28-.13.55.17.28.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.32 1.44.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.1 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.35z"/></svg>
 </a>
- 
+
 <!-- ================= AUTH MODAL (Login / Signup) ================= -->
 <div class="modal-overlay" id="authModal">
   <div class="modal-card">
@@ -1063,7 +1012,7 @@
       <div class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Log in</div>
       <div class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')">Sign up</div>
     </div>
- 
+
     <!-- LOGIN FORM -->
     <div id="loginView">
       <h2>Welcome back</h2>
@@ -1076,11 +1025,11 @@
         <div class="auth-msg" id="loginMsg"></div>
       </form>
     </div>
- 
+
     <!-- SIGNUP FORM (3 steps: email → OTP → details) -->
     <div id="signupView" style="display:none;">
       <h2>Create your account</h2>
- 
+
       <!-- Step 1: enter email, send OTP -->
       <div id="signupStep1">
         <p style="font-size:13px;color:var(--ink-soft);margin-bottom:4px;">We'll email you a 6-digit code to verify it's really you.</p>
@@ -1091,7 +1040,7 @@
           <div class="auth-msg" id="sendOtpMsg"></div>
         </form>
       </div>
- 
+
       <!-- Step 2: enter OTP -->
       <div id="signupStep2" style="display:none;">
         <p style="font-size:13px;color:var(--ink-soft);margin-bottom:4px;">Code sent to <b id="otpEmailDisplay"></b>.</p>
@@ -1105,7 +1054,7 @@
           </div>
         </form>
       </div>
- 
+
       <!-- Step 3: name, phone, password -->
       <div id="signupStep3" style="display:none;">
         <form id="signupForm">
@@ -1122,7 +1071,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- ================= DASHBOARD OVERLAY ================= -->
 <div class="dash-overlay" id="dashOverlay">
   <div class="dash-header">
@@ -1137,7 +1086,7 @@
   <div class="dash-body wrap">
     <h1 id="dashGreeting" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;margin-bottom:6px;">Welcome</h1>
     <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:34px;">Manage your profile and SEO plan.</p>
- 
+
     <div class="dash-grid">
       <div class="dash-card">
         <h3>Your profile</h3>
@@ -1155,7 +1104,7 @@
           <div class="auth-msg" id="profileMsg"></div>
         </form>
       </div>
- 
+
       <div class="dash-card">
         <h3>Choose a plan</h3>
         <div class="plan-row">
@@ -1167,14 +1116,14 @@
           <button onclick="startPayment('growth')">Pay now</button>
         </div>
         <div class="auth-msg" id="payMsg"></div>
- 
+
         <h3 style="margin-top:24px;">Payment history</h3>
         <div class="payments-list" id="paymentsList"><div>No payments yet.</div></div>
       </div>
     </div>
   </div>
 </div>
- 
+
 <script>
   // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
@@ -1187,13 +1136,24 @@
     });
   },{threshold:0.15});
   revealEls.forEach(el=>io.observe(el));
- 
+
+  // SAFETY NET: if any script error happens anywhere on the page, force all
+  // scroll-reveal sections to become visible immediately — so a future bug
+  // can never leave the page looking "blank" again.
+  window.addEventListener('error', function(){
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  });
+  // Also force-reveal everything after 4 seconds no matter what, as a hard backstop.
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+  }, 4000);
+
   // Hero chart draw animation on load
   window.addEventListener('load',()=>{
     document.getElementById('linePath').classList.add('animate');
     document.getElementById('areaPath').classList.add('animate');
   });
- 
+
   // Animated stat counters
   const counters = document.querySelectorAll('.stat .num');
   const counterIO = new IntersectionObserver((entries)=>{
@@ -1219,13 +1179,13 @@
     });
   },{threshold:0.4});
   counters.forEach(el=>counterIO.observe(el));
- 
+
   // Header shadow on scroll
   const header = document.querySelector('header');
   window.addEventListener('scroll',()=>{
     header.style.boxShadow = window.scrollY > 8 ? '0 1px 0 rgba(20,24,28,.04)' : 'none';
   });
- 
+
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item=>{
     const q = item.querySelector('.faq-q');
@@ -1247,10 +1207,10 @@
       }
     });
   });
- 
+
   // ============ AUTH + DASHBOARD LOGIC ============
   const API_BASE = window.ASCEND_API_BASE || 'http://localhost:4000';
- 
+
   // Turns a raw fetch/network failure into a message that explains WHY, not just "failed to fetch"
   function friendlyError(err){
     if(err instanceof TypeError || /failed to fetch/i.test(err.message || '')){
@@ -1258,7 +1218,7 @@
     }
     return err.message || 'Something went wrong.';
   }
- 
+
   function openAuth(tab, plan){
     document.getElementById('authModal').classList.add('open');
     switchAuthTab(tab || 'login');
@@ -1283,7 +1243,7 @@
   document.getElementById('authModal').addEventListener('click', (e)=>{
     if(e.target.id === 'authModal') closeAuth();
   });
- 
+
   // Reflect logged-in state in nav on load
   (function initAuthState(){
     const token = localStorage.getItem('am_token');
@@ -1293,7 +1253,7 @@
       navLink.setAttribute('onclick','openDash();return false;');
     }
   })();
- 
+
   // ---- LOGIN ----
   document.getElementById('loginForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
@@ -1320,7 +1280,7 @@
       btn.disabled = false; btn.textContent = 'Log in';
     }
   });
- 
+
   // ---- SIGNUP STEP 1: send OTP to email ----
   let verifiedSignupEmail = '';
   document.getElementById('sendOtpForm').addEventListener('submit', async (e)=>{
@@ -1345,7 +1305,7 @@
       btn.disabled = false; btn.textContent = 'Send verification code';
     }
   });
- 
+
   // ---- SIGNUP STEP 2: verify OTP ----
   document.getElementById('verifyOtpForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
@@ -1370,7 +1330,7 @@
       btn.disabled = false; btn.textContent = 'Verify code';
     }
   });
- 
+
   // ---- SIGNUP STEP 3: create account ----
   document.getElementById('signupForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
@@ -1399,7 +1359,7 @@
       btn.disabled = false; btn.textContent = 'Create account';
     }
   });
- 
+
   // ---- DASHBOARD ----
   function openDash(){
     const token = localStorage.getItem('am_token');
@@ -1420,7 +1380,7 @@
     navLink.textContent = 'Log in';
     navLink.setAttribute('onclick',"openAuth('login');return false;");
   }
- 
+
   async function loadProfile(){
     const token = localStorage.getItem('am_token');
     try{
@@ -1441,20 +1401,19 @@
       logoutUser();
     }
   }
- 
+
   document.getElementById('profileForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
     const token = localStorage.getItem('am_token');
     const msg = document.getElementById('profileMsg');
     msg.className = 'auth-msg';
     try{
-      const SUPABASE_URL = "https://azvylhtslopbaescsjmv.supabase.co";
-const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
-
-const supabase = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+      const res = await fetch(`${API_BASE}/api/profile/me`, {
+        method:'PUT', headers:{'Content-Type':'application/json', Authorization:`Bearer ${token}`},
+        body: JSON.stringify({
+          name: document.getElementById('dashName').value,
+          phone: document.getElementById('dashPhone').value,
+          website: document.getElementById('dashWebsite').value,
         })
       });
       const data = await res.json();
@@ -1464,7 +1423,7 @@ const supabase = window.supabase.createClient(
       msg.className = 'auth-msg error'; msg.textContent = friendlyError(err);
     }
   });
- 
+
   // Loads the Razorpay checkout script only once, only when actually needed (keeps initial page load light)
   let razorpayLoadPromise = null;
   function loadRazorpayScript(){
@@ -1479,7 +1438,7 @@ const supabase = window.supabase.createClient(
     });
     return razorpayLoadPromise;
   }
- 
+
   async function startPayment(plan){
     const token = localStorage.getItem('am_token');
     const msg = document.getElementById('payMsg');
@@ -1494,7 +1453,25 @@ const supabase = window.supabase.createClient(
       if(!res.ok) throw new Error(order.error);
       const rzp = new Razorpay({
         key: order.keyId, amount: order.amount, currency: order.currency, order_id: order.orderId,
-        name: 'Ascend Metric', description: `${plan} plan subscription`, theme:{ color:'#0e6b52' },
+        name: 'Ascend Metric', description: `${plan} plan subscription`, theme:{ color:'#1d4fd6' },
+        // Explicitly show every payment method — UPI, all cards (Visa/Mastercard/Rupay/Amex), netbanking, wallets
+        config: {
+          display: {
+            blocks: {
+              banks: {
+                name: 'Pay via UPI, Card, Netbanking or Wallet',
+                instruments: [
+                  { method: 'upi' },
+                  { method: 'card' },
+                  { method: 'netbanking' },
+                  { method: 'wallet' },
+                ],
+              },
+            },
+            sequence: ['block.banks'],
+            preferences: { show_default_blocks: true },
+          },
+        },
         handler: async function(response){
           const verifyRes = await fetch(`${API_BASE}/api/payment/verify`, {
             method:'POST', headers:{'Content-Type':'application/json', Authorization:`Bearer ${token}`},
@@ -1515,8 +1492,7 @@ const supabase = window.supabase.createClient(
     }
   }
 </script>
- 
- 
+
+
 </body>
 </html>
- 
