@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>window.ASCEND_API_BASE = 'https://ascend-metric-backend.onrender.com';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffffff">
@@ -1067,45 +1066,20 @@
     <!-- SIGNUP FORM (3 steps: email → OTP → details) -->
     <div id="signupView" style="display:none;">
       <h2>Create your account</h2>
-
-      <!-- Step 1: enter email, send OTP -->
-      <div id="signupStep1">
-        <p style="font-size:13px;color:var(--ink-soft);margin-bottom:4px;">We'll email you a 6-digit code to verify it's really you.</p>
-        <form id="sendOtpForm">
-          <label class="field-label">Email</label>
-          <input type="email" id="otpEmail" class="field-input" required>
-          <button type="submit" class="auth-submit" id="sendOtpBtn">Send verification code</button>
-          <div class="auth-msg" id="sendOtpMsg"></div>
-        </form>
-      </div>
-
-      <!-- Step 2: enter OTP -->
-      <div id="signupStep2" style="display:none;">
-        <p style="font-size:13px;color:var(--ink-soft);margin-bottom:4px;">Code sent to <b id="otpEmailDisplay"></b>.</p>
-        <form id="verifyOtpForm">
-          <label class="field-label">6-digit code</label>
-          <input type="text" id="otpCode" class="field-input" maxlength="6" inputmode="numeric" required>
-          <button type="submit" class="auth-submit" id="verifyOtpBtn">Verify code</button>
-          <div class="auth-msg" id="verifyOtpMsg"></div>
-          <div style="text-align:center;margin-top:10px;">
-            <a href="#" onclick="backToEmailStep();return false;" style="font-size:12.5px;color:var(--ink-soft);">← Change email</a>
-          </div>
-        </form>
-      </div>
-
-      <!-- Step 3: name, phone, password -->
-      <div id="signupStep3" style="display:none;">
-        <form id="signupForm">
-          <label class="field-label">Full name</label>
-          <input type="text" id="signupName" class="field-input" required>
-          <label class="field-label">Phone (optional)</label>
-          <input type="tel" id="signupPhone" class="field-input">
-          <label class="field-label">Password</label>
-          <input type="password" id="signupPassword" class="field-input" minlength="6" required>
-          <button type="submit" class="auth-submit" id="signupBtn">Create account</button>
-          <div class="auth-msg" id="signupMsg"></div>
-        </form>
-      </div>
+      <form id="signupForm">
+        <label class="field-label">Full name</label>
+        <input type="text" id="signupName" class="field-input" required>
+        <label class="field-label">Email</label>
+        <input type="email" id="signupEmail" class="field-input" required>
+        <label class="field-label">Phone</label>
+        <input type="tel" id="signupPhone" class="field-input" required>
+        <label class="field-label">Address</label>
+        <input type="text" id="signupAddress" class="field-input" placeholder="City, State" required>
+        <label class="field-label">Password</label>
+        <input type="password" id="signupPassword" class="field-input" minlength="6" required>
+        <button type="submit" class="auth-submit" id="signupBtn">Create account</button>
+        <div class="auth-msg" id="signupMsg"></div>
+      </form>
     </div>
   </div>
 </div>
@@ -1122,7 +1096,7 @@
     </div>
   </div>
   <div class="dash-body wrap">
-    <h1 id="dashGreeting" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;margin-bottom:6px;">Welcome</h1>
+    <h2 id="dashGreeting" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;margin-bottom:6px;">Welcome</h2>
     <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:34px;">Manage your profile and SEO plan.</p>
 
     <div class="dash-grid">
@@ -1136,6 +1110,8 @@
           <input type="email" id="dashEmail" class="field-input" disabled>
           <label class="field-label">Phone</label>
           <input type="tel" id="dashPhone" class="field-input">
+          <label class="field-label">Address</label>
+          <input type="text" id="dashAddress" class="field-input" placeholder="City, State">
           <label class="field-label">Website URL</label>
           <input type="text" id="dashWebsite" class="field-input" placeholder="https://yourwebsite.com">
           <button type="submit" class="auth-submit" style="margin-top:18px;">Save changes</button>
@@ -1271,12 +1247,6 @@
     document.getElementById('tabSignup').classList.toggle('active', !isLogin);
     document.getElementById('loginView').style.display = isLogin ? 'block' : 'none';
     document.getElementById('signupView').style.display = isLogin ? 'none' : 'block';
-    if(!isLogin) backToEmailStep();
-  }
-  function backToEmailStep(){
-    document.getElementById('signupStep1').style.display = 'block';
-    document.getElementById('signupStep2').style.display = 'none';
-    document.getElementById('signupStep3').style.display = 'none';
   }
   document.getElementById('authModal').addEventListener('click', (e)=>{
     if(e.target.id === 'authModal') closeAuth();
@@ -1345,57 +1315,7 @@
     }
   });
 
-  // ---- SIGNUP STEP 1: send OTP to email ----
-  let verifiedSignupEmail = '';
-  document.getElementById('sendOtpForm').addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    const msg = document.getElementById('sendOtpMsg');
-    const btn = document.getElementById('sendOtpBtn');
-    const email = document.getElementById('otpEmail').value;
-    msg.className = 'auth-msg'; btn.disabled = true; btn.textContent = 'Sending code…';
-    try{
-      const res = await fetch(`${API_BASE}/api/auth/send-otp`, {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ email })
-      });
-      const data = await res.json();
-      if(!res.ok) throw new Error(data.error || 'Could not send code.');
-      document.getElementById('otpEmailDisplay').textContent = email;
-      document.getElementById('signupStep1').style.display = 'none';
-      document.getElementById('signupStep2').style.display = 'block';
-    }catch(err){
-      msg.className = 'auth-msg error'; msg.textContent = friendlyError(err);
-    }finally{
-      btn.disabled = false; btn.textContent = 'Send verification code';
-    }
-  });
-
-  // ---- SIGNUP STEP 2: verify OTP ----
-  document.getElementById('verifyOtpForm').addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    const msg = document.getElementById('verifyOtpMsg');
-    const btn = document.getElementById('verifyOtpBtn');
-    const email = document.getElementById('otpEmail').value;
-    const otp = document.getElementById('otpCode').value;
-    msg.className = 'auth-msg'; btn.disabled = true; btn.textContent = 'Verifying…';
-    try{
-      const res = await fetch(`${API_BASE}/api/auth/verify-otp`, {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ email, otp })
-      });
-      const data = await res.json();
-      if(!res.ok) throw new Error(data.error || 'Incorrect code.');
-      verifiedSignupEmail = email;
-      document.getElementById('signupStep2').style.display = 'none';
-      document.getElementById('signupStep3').style.display = 'block';
-    }catch(err){
-      msg.className = 'auth-msg error'; msg.textContent = friendlyError(err);
-    }finally{
-      btn.disabled = false; btn.textContent = 'Verify code';
-    }
-  });
-
-  // ---- SIGNUP STEP 3: create account ----
+  // ---- SIGNUP: create account directly (auto-login to dashboard after) ----
   document.getElementById('signupForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
     const msg = document.getElementById('signupMsg');
@@ -1406,8 +1326,9 @@
         method:'POST', headers:{'Content-Type':'application/json'},
         body: JSON.stringify({
           name: document.getElementById('signupName').value,
-          email: verifiedSignupEmail,
+          email: document.getElementById('signupEmail').value,
           phone: document.getElementById('signupPhone').value,
+          address: document.getElementById('signupAddress').value,
           password: document.getElementById('signupPassword').value,
         })
       });
@@ -1423,6 +1344,7 @@
       btn.disabled = false; btn.textContent = 'Create account';
     }
   });
+
 
   // ---- DASHBOARD ----
   function openDash(){
@@ -1457,10 +1379,16 @@
       const data = await res.json();
       if(!res.ok) throw new Error(data.error);
       document.getElementById('dashGreeting').textContent = `Welcome, ${data.user.name.split(' ')[0]}`;
-      document.getElementById('dashPlanBadge').textContent = `Plan: ${data.user.plan}`;
+      let planText = `Plan: ${data.user.plan}`;
+      if(data.user.plan_expiry){
+        const daysLeft = Math.ceil((new Date(data.user.plan_expiry).getTime() - Date.now()) / (1000*60*60*24));
+        planText += daysLeft > 0 ? ` — ${daysLeft} day(s) left` : ` — expired`;
+      }
+      document.getElementById('dashPlanBadge').textContent = planText;
       document.getElementById('dashName').value = data.user.name;
       document.getElementById('dashEmail').value = data.user.email;
       document.getElementById('dashPhone').value = data.user.phone || '';
+      document.getElementById('dashAddress').value = data.user.address || '';
       document.getElementById('dashWebsite').value = data.user.website || '';
       const list = document.getElementById('paymentsList');
       if(data.payments && data.payments.length){
@@ -1482,6 +1410,7 @@
         body: JSON.stringify({
           name: document.getElementById('dashName').value,
           phone: document.getElementById('dashPhone').value,
+          address: document.getElementById('dashAddress').value,
           website: document.getElementById('dashWebsite').value,
         })
       });
